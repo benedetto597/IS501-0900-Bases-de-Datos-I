@@ -1,5 +1,5 @@
 <!-- Encabezado -->
-## IS501 Lenguajes de Programación 
+## IS501 Bases de datos I
 ### Edgar Josué Benedetto Godoy
 #### edgar.benedetto@unah.hn
 #### 20171033802

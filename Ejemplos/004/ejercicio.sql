@@ -1,6 +1,5 @@
 
 -- Creación de la base de datos, unicamente si esta no existe.
-
 CREATE DATABASE IF NOT EXIST GameCatalogue;
 
 -- Seleccionar la base de datos para su uso.

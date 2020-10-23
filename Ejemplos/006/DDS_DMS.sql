@@ -44,4 +44,13 @@ SELECT sma_ram AS "RAM", COUNT(*) AS "Cantidad" FROM PCInventory GROUP BY sma_ra
 SELECT sma_ram AS "RAM", COUNT(*) AS "Cantidad" FROM PCInventory GROUP BY sma_ram HAVING COUNT(*) >=2 LIMIT 3;
 
 -- Cuantos computadores hay por cantidad de RAM, mostrando solo 3 registros de los grupos donde hay dos o más dispositivos, ordenados de mayor a menor.
-SELECT sma_ram AS "RAM", COUNT(*) AS "Cantidad" FROM PCInventory GROUP BY sma_ram HAVING COUNT(*) >=2 LIMIT 3 ORDER BY "Cantidad" DESC;
+SELECT sma_ram AS "RAM", COUNT(*) AS "Cantidad"  FROM PCInventory GROUP BY sma_ram HAVING COUNT(*)>=2 ORDER BY sma_ram DESC LIMIT 2;
+
+-- Liste las computadoras que pertenecen a los tres grupos mayores de RAM. Si una computadora pertenece a la 4ta mayor agrupación de RAM, dicho computador no debe aparecer en la consulta – 
+-- PCGroup es el nombre de la subcocnsulta usada luego del JOIN -- 
+-- Se usa tilde inversa para aceptar cadenas con valores compuestos -- 
+SELECT tex_name AS "Nombre del computador" FROM PCInventory JOIN  (SELECT sma_ram AS "RAM", COUNT(*) AS "Cantidad"  FROM PCInventory GROUP BY sma_ram HAVING COUNT(*)>=2 ORDER BY sma_ram DESC LIMIT 3) PCGroup ON PCInventory.sma_ram = PCGroup. `RAM`;
+
+-- Usando LEFT JOIN -- 
+SELECT tex_name AS "Nombre del computador" FROM PCInventory LEFT JOIN  (SELECT sma_ram AS "RAM", COUNT(*) AS "Cantidad"  FROM PCInventory GROUP BY sma_ram HAVING COUNT(*)>=2 ORDER BY sma_ram DESC LIMIT 3) PCGroup ON PCInventory.sma_ram = PCGroup. `RAM`;
+
