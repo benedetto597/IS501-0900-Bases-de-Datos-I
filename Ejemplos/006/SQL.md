@@ -55,3 +55,36 @@ Having
 La clausula HAVING se usa en SQL para cuando existen condicionales que no pueden aplicarse en el WHERE.
 
         GROUP BY atrivuto(s) HAVING condicional
+
+Funcionalidades generales usando SQL
+---
+Ejemplos de uso de SLQ SELECT
+Generar flotantes aleatorios 
+SELECT rand(); se obtiene un valor aleatorio flotante.
+
+Generar un entero a partir de un flotante aleatorio 
+SELECT CAST (rand() AS INT) ; de esta forma se obtiene siempre cero dado que los flotantes están entre 0 y 1, sirve solo para castear.
+SELECT CAST (rand() * (max – min ) + min AS INT) ;
+
+Generación de fechas 
+SELECT NOW(); obtener la fecha completa.
+SELECT YEAR(NOW()); obtener solo el año.
+SELECT MONTH(NOW()); obtener solo el mes.
+SELECT 
+	YEAR(NOW()) AS “Año”;
+	MONTH(NOW()) AS “Mes”;
+	DAY(NOW()) AS “Día”;
+	HOUR(NOW()) AS “Hora”;
+	MINUTE(NOW()) AS “Minuto”;
+	SECOND(NOW()) AS “Segundo”;
+;
+
+Concatenar   
+SELECT CONCAT( “Hola” , “ “, “Mundo”) AS “Cadena de Hola Mundo”;
+
+Generación de SQL mediante SQL 
+SELECT CONCAT(“SELECT ” , “Campo1,”, “Campo2"
+
+-	JOIN  Retorna los registros que tienen una condición de igualdad ambas tablas
+-	LEFT JOIN  Devuelve todos los registros de la tabla izquierda (la que está en el FROM) y los registros coincidentes de la tabla derecha (la que está en el JOIN), el resultado es NULL desde el lado derecho sino hay coincidencia.
+-	RIGTH JOIN  Devuelve todos los registros de la tabla derecha.
