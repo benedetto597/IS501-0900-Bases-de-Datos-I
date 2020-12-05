@@ -12,7 +12,7 @@
 from ConectionConfig import ConectionConfig
 from MySQLEngine import MySQLEngine
 
-config = ConectionConfig("localhost", "3306", "admin", "admin", "Example")
+config = ConectionConfig("localhost ", "3306", "admin", "admin", "Example")
 engine = MySQLEngine(config)
 
 #Primeros 10 registros

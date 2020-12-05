@@ -21,7 +21,7 @@ class MySQLEngine:
     def start(self):
         #El metodo connect necesita el valor del servidor y demás por lo tanto se debe decir el nombre del campo
         self.con = mysql.connector.connect(
-            hots = self.server,
+            host = self.server,
             port = self.port,
             user = self.user,
             password = self.password,    
@@ -36,6 +36,6 @@ class MySQLEngine:
         self.link = self.con.cursor()
 
     #FetchAll --> obtiene todos los registros en una sola variable 
-    def select(self, query=""):
+    def select(self, query):
         self.link.execute(query)
         return self.link.fetchall()
