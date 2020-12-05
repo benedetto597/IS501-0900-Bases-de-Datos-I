@@ -29,7 +29,7 @@ DELIMITER $$
 /* Por defecto existe un máximo de recursividad en MySQL y se debe modificar 
 la variable max_sp_recursion_depht que se encuentra en la variable SESSION 
 que al ser una varible especial se usa @@ */
-    SET @@SESSION.max_sp_recursion_depht = 25$$
+    SET @@SESSION.max_sp_recursion_depht = 50$$
 
     -- Borrar el procedimiento previamente --
     DROP PROCEDURE IF EXISTS sp_factorial$$
@@ -37,7 +37,7 @@ que al ser una varible especial se usa @@ */
     -- Valor de entrada IN y valor de salida OUT
     CREATE PROCEDURE sp_factorial(IN N INT, OUT FACT INT)
 
-    --Inicio de procedimiento --
+    -- Inicio de procedimiento --
     BEGIN 
         IF N = 1 THEN 
             SELECT 1 INTO FACT;
@@ -46,7 +46,7 @@ que al ser una varible especial se usa @@ */
             SELECT N * @TEMP INTO FACT;
         END IF; 
 
-    --Fin del procedimiento -- 
+    -- Fin del procedimiento -- 
     END$$
 DELIMITER ; 
 

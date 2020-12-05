@@ -75,7 +75,10 @@ FROM
 WHERE
     (JSON_UNQUOTE(JSON_EXTRACT(jso_record, "$.name"))) RLIKE "^((0[13578])|(1[28]))\\d{11}$"
 ORDER BY 
-    ASC 
+    CASE 
+        WHEN (JSON_UNQUOTE(JSON_EXTRACT(jso_record, "$.uid"))) RLIKE "^((0[178])|(18))\\d{11}$" THEN "Recorrido 1"
+        WHEN (JSON_UNQUOTE(JSON_EXTRACT(jso_record, "$.uid"))) RLIKE "^((0[35])|(12))\\d{11}$" THEN "Recorrido 2"
+    END ASC 
 ;
 
 
