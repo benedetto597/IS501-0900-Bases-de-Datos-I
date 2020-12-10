@@ -11,7 +11,7 @@ CREATE PROCEDURE sp_createNumbers(
 )
 BEGIN
     DECLARE counter INT DEFAULT 1;
-    WHILE (counter <= count) DROP  
+    WHILE (counter <= count) DO 
         INSERT INTO Numbers() VALUES();
         SET counter = counter + 1;
     END WHILE;

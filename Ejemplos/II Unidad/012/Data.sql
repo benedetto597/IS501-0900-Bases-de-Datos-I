@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS `Measure`(
 
 TRUNCATE TABLE `Measure`;
 
-INSERT INTO Measure(device, tempreture, date) VALUES 
+INSERT INTO Measure(device, temperature, date) VALUES 
     (3, 36.95, '2020-11-24 12:16:48'),
     (2, 36.95, '2020-11-24 12:19:48'),
     (3, 36.95, '2020-11-24 12:14:48'),

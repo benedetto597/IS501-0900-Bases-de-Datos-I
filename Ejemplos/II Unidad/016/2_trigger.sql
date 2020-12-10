@@ -6,9 +6,9 @@ DELIMITER $$
 
 CREATE TRIGGER tg_calculateSquareRoot
     AFTER INSERT 
-    ON Numbers FRO EACH ROW
+    ON Numbers FOR EACH ROW
 BEGIN
-    INSERT INTO NumbersSquare(num_id_fk, num_squared)
+    INSERT INTO NumbersSquared(num_id_fk, num_squared)
     VALUES (new.id,SQRT(new.id));
 END$$
 

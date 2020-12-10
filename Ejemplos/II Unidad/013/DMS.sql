@@ -39,7 +39,7 @@ CREATE VIEW FirstDeviceMeasureRecent AS
     LIMIT 10
 ;
 
-SELECT "First Device Measure Recent" * AS "View", COUNT(*) AS "Count" FROM FirstDeviceMeasureRecent;
+SELECT "First Device Measure Recent"  AS "View", COUNT(*) AS "Count" FROM FirstDeviceMeasureRecent;
 
 /*
     1) Cree una vista que muestre la cantidad de registros por cada mes, para el año 2020, llamada "CountMonth2020"
@@ -58,7 +58,7 @@ CREATE VIEW CountMonth2020 AS
     GROUP BY 
         MONTH(Measure.date)
     ORDER BY 
-        MONTH(Measure.data) ASC
+        MONTH(Measure.date) ASC
 ;
 
 SELECT * FROM CountMonth2020;

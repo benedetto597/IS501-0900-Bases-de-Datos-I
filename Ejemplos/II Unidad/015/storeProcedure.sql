@@ -33,12 +33,12 @@ CREATE TABLE MeasureReviewed(
 
 ) COMMENT = "Historico de revisiones automaticas";
 
-INSERT INTO Measure(num_device, num_temperature, dat_date) VALUES (1,36.43, '2020-12-01 20:45:11'),
-(1,36.43, '2020-12-01 20:45:11'),
-(1,36.43, '2020-12-01 20:45:11'),
-(1,36.43, '2020-12-01 20:45:11'),
-(1,36.43, '2020-12-01 20:45:11'),
-(1,36.43, '2020-12-01 20:45:11');
+INSERT INTO Measure(num_device, num_temperature, dat_date) VALUES (1,37.43, '2020-12-01 20:45:11'),
+(1,38.43, '2020-12-01 20:45:11'),
+(1,35.43, '2020-12-01 20:45:11'),
+(1,35.43, '2020-12-01 20:45:11'),
+(1,35.43, '2020-12-01 20:45:11'),
+(1,38.43, '2020-12-01 20:45:11');
 
 -- Objetivo Actualizar el único registro de la tabla
 -- Procedimiento para dejar actualizados los valores en la tabla
@@ -47,7 +47,7 @@ CREATE TABLE MeasureSumarized(
     num_higher INT NOT NULL DEFAULT 0 COMMENT "Cantidad de valores mayor de temperatura"
 ) COMMENT = "Historico de revisiones automaticas";
 
-INSERT INTO MeasureSumarized() VALUES ()
+INSERT INTO MeasureSumarized() VALUES ();
 -- Para insertar se usa INSERT INTO MeasureSumarized() VALUES ()
 -- No requiere ni valores ni campos porque tienen valores por defecto
 
@@ -95,7 +95,6 @@ EXTRAS
     Para no recorrer los que ya esten revisados 
     Agregado pero no probado 
         - JOIN MeasureReviewed;
-        - INSERT INTO MeasureReviewed(num_measure_fk) VALUES (theId); 
 
  
 */  
@@ -114,7 +113,7 @@ BEGIN
     -- 1  
     DECLARE cursorCounter 
         CURSOR FOR 
-            SELECT id, num_temperature FROM Measure JOIN MeasureReviewed; 
+            SELECT id, num_temperature FROM Measure; 
 
     -- 2
     DECLARE CONTINUE HANDLER FOR NOT FOUND SET FINISHED = 1;
@@ -134,10 +133,9 @@ BEGIN
 
             IF theTemp <= minValue THEN 
                 SET lowerCounter = lowerCounter + 1;
-                INSERT INTO MeasureReviewed(num_measure_fk) VALUES (theId); 
             ELSE 
                 SET higherCounter = higherCounter + 1;
-                INSERT INTO MeasureReviewed(num_measure_fk) VALUES (theId); 
+                
             END IF;
 
         END LOOP getCounter; 

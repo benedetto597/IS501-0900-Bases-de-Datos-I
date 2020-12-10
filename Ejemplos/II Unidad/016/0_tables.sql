@@ -34,14 +34,14 @@ CREATE TABLE Numbers(
 CREATE TABLE NumbersSquared(
     num_id_fk INT COMMENT "A secuencial series of numbers",
     num_squared DOUBLE COMMENT "The square root of the number",
-    FOREING KEY (num_id_fk) REFERENCES Numbers(id)
+    FOREIGN KEY (num_id_fk) REFERENCES Numbers(id)
 )COMMENT="Filled by a trigger";
 
 -- Tabla llenada con SELECT e INSERT
 CREATE TABLE NumbersSquared_insert(
     num_id_fk INT COMMENT "A secuencial series of numbers",
     num_squared DOUBLE COMMENT "The square root of the number",
-    FOREING KEY (num_id_fk) REFERENCES Numbers(id)
+    FOREIGN KEY (num_id_fk) REFERENCES Numbers(id)
 )COMMENT="Filled by a select and insert instruction";
 
 CREATE VIEW vw_NumbersSquared AS 

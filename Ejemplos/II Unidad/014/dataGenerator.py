@@ -37,4 +37,19 @@ class DataGenerator:
 """
 La solución más optima
     Encapsular los métodos que generan los devices, las temperaturas y las fechas
+
+        def generate(self, minutes):
+        f = open(self.fileName, "w")
+        f.write("USE Example; \n INSERT INTO Measure(deviceId, temperature, date) VALUES")
+        f.close()
+
+        #"a" es de agregado (append)
+        count = 0
+        f = open(self.fileName, "a")
+        for i in range(minutes):
+            f.write(f'({(int(random.random()*(4-1)+1))}, {(random.random()*(39-36)+36)}, {(datetime.now() + timedelta(seconds=60*i))}),') 
+            count = count + i
+        
+        f.write(f'({(int(random.random()*(4-1)+1))}, {(random.random()*(39-36)+36)}, {(datetime.now() + timedelta(seconds=60))});') 
+        f.close()
 """
