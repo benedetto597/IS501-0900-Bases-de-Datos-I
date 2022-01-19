@@ -37,8 +37,7 @@ _______
 | Unidades Valorativas | 5 U.V. |
 | Horario de Clase | 5 horas semanales, 1 hora diaria por sección | 
 | Sección | 0900 | 
-| Horas de Estudio | Mínimo 10 horas diarias fuera del horario de clase, distribuidas entre Lunes a Sabado, por cada semana del periodo académico. Normas de educación superior, inciso B) Unidad de Medida Académica, Artículo 59 y Artículo 60, La unidad valorativa o crédito, representa un esfuerzo académico real de tres (3) horas así: a) Por una (1) hora  académica con el catedrático, más dos (2) horas de preparación o trabajo académico individual.
-https://des.unah.edu.hn/repositorio/normativa 
+| Horas de Estudio | Mínimo 10 horas diarias fuera del horario de clase, distribuidas entre Lunes a Sabado, por cada semana del periodo académico. Normas de educación superior, inciso B) Unidad de Medida Académica, Artículo 59 y Artículo 60, La unidad valorativa o crédito, representa un esfuerzo académico real de tres (3) horas así: a) Por una (1) hora  académica con el catedrático, más dos (2) horas de preparación o trabajo académico individual. [Normativa UNAH](https://des.unah.edu.hn/repositorio/normativa) 
 
 ### Objetivos Generales
 * Esta materia desea activar en el estudiante el camino de las tecnologías de información y de las ciencias de la computación para conocer los fundamentos de las Bases de Datos. Para ello, los objetivos generales de la clase son:
