@@ -1,0 +1,13 @@
+1. En archivo JSON de respaldo con compresión (mediante Python3 y Linux) en una base de datos B.
+2. Módulo de autenticación.
+3. Un módulo de registros de bitácora.
+4. Todos los datos del sistema (con excepción de la bitácora, ver más adelante) deben estar encriptados usando la contraseña del usuario administrador.
+5. El manejo de archivos BLOB debe ser mediante archivos “.json”.
+6. El administrador debe poder ser capaz de crear usuarios operadores. Un usuario operador puede crear dibujos y visualizar únicamente los dibujos creados por él mismo. Un usuario administrador puede crear y visualizar dibujos, y gestionar (crear, modificar nombre y contraseña, y eliminar) usuarios.
+7. La bitácora deberá guardar todas las acciones del usuario, incluyendo, autenticación, visualización, creación, modificación, eliminación de dibujos, configuraciones (colores) y usuarios.
+8. El menú “File->New” debe crear una nueva imagen dentro del repositorio de dibujos del usuario autenticado.
+9. El menú “File->Load” debe permitir al usuario elegir un dibujo desde la base de datos, limitándose a mostrar únicamente los dibujos de este usuario. El listado de dibujos debe aparecer mediante nueva ventana, y al seleccionar un dibujo y presionar aceptar, ese dibujo se debe cargar en la pantalla de dibujo. Si el sistema no tiene dibujos de este usuario, el programa debe estar preparado para no fallar con error.
+10. El menú “File->Load Intro” debe eliminarse.
+11. El menú “File->Save As”, debe poder sobreescribir el dibujo ya existente en la base de datos A, o guardar la imagen como un nuevo dibujo en la base de datos A. Al mismo tiempo se debe guardar un archivo equivalente BLOB (compreso) en la base de datos B de respaldo. El contenido de dibujo de la base de datos B debe ser equivalente al dibujo de la base de datos A.
+12. Se debe crear un nuevo menú “File->Download” que debe descargar el archivo guardado como “.json” en la base de datos de respaldo.
+13. Se debe crear un nuevo menú “File->Configure” que debe ser visible únicamente por el usuario administrador, el cual debe habilitar una ventana donde se puedan gestionar los usuarios y modificar los valores de color antes mencionados.
